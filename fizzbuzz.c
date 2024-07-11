@@ -22,13 +22,13 @@ void	ft_putnbr(int nb)
 	ft_putchar((num % 10) + '0');
 }
 
-int main()
+int	main(void)
 {
 	int i = 1;
 
 	while (i <= 100)
 	{
-		if(i % 3 == 0 && i % 5 == 0)
+		if (i % 3 == 0 && i % 5 == 0)
 		{
 			write(1, "fizzbuzz\n", 9);
 		}

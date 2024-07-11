@@ -1,10 +1,11 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-char *ft_strncpy(char *s1, char *s2, int n)
+char	*ft_strncpy(char *s1, char *s2, int n)
 {
-	int i = -1;
+	int	i;
 
+	i = -1;
 	while (++i < n && s2[i])
 		s1[i] = s2[i];
 	s1[i] = '\0';
@@ -13,11 +14,16 @@ char *ft_strncpy(char *s1, char *s2, int n)
 
 char	**ft_split(char *str)
 {
-	int i = 0;
-	int j = 0;
-	int k = 0;
-	int wc = 0;
-	
+	int		i;
+	int		j;
+	int		k;
+	int		wc;
+	char	**out;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	wc = 0;
 	while (str[i])
 	{
 		while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
@@ -27,10 +33,8 @@ char	**ft_split(char *str)
 		while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
 			i++;
 	}
-	
-	char **out = (char **)malloc(sizeof(char *) * (wc + 1));
+	out = (char **)malloc(sizeof(char *) * (wc + 1));
 	i = 0;
-	
 	while (str[i])
 	{
 		while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
